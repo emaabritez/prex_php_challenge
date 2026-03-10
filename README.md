@@ -51,6 +51,7 @@ docker exec -it laravel_app php artisan migrate
 Create the Passport personal access client:
 
 docker exec -it laravel_app php artisan passport:client --personal
+
 docker exec -it laravel_app php artisan passport:keys
 
 Seed the database:
