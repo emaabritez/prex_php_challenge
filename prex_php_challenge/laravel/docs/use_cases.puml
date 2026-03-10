@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+
+actor User
+
+rectangle "GIF API System" {
+
+  usecase "Login" as UC1
+  usecase "Buscar GIFs" as UC2
+  usecase "Ver GIF por ID" as UC3
+  usecase "Guardar Favorito" as UC4
+  usecase "Listar Favoritos" as UC5
+  usecase "Eliminar Favorito" as UC6
+
+}
+
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC5
+User --> UC6
+
+@enduml
+

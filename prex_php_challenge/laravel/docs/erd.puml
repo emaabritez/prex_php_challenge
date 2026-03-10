@@ -1,0 +1,29 @@
+@startuml
+
+entity USERS {
+  +id : int
+  name : string
+  email : string
+  password : string
+  created_at : datetime
+}
+
+entity FAVORITES {
+  +id : int
+  user_id : int
+  gif_id : string
+  title : string
+  url : string
+  created_at : datetime
+}
+
+entity OAUTH_ACCESS_TOKENS {
+  +id : string
+  user_id : int
+  expires_at : datetime
+}
+
+USERS ||--o{ FAVORITES : has
+USERS ||--o{ OAUTH_ACCESS_TOKENS : authentication
+
+@enduml

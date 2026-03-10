@@ -1,0 +1,36 @@
+@startuml
+
+actor User
+participant API
+participant Giphy
+database DB
+
+== Login ==
+
+User -> API: POST /login
+API -> DB: validar usuario
+DB --> API: usuario válido
+API --> User: access_token
+
+== Buscar GIFs ==
+
+User -> API: GET /gifs/search?query=cat
+API -> Giphy: request search
+Giphy --> API: lista de gifs
+API --> User: respuesta transformada
+
+== Guardar Favorito ==
+
+User -> API: POST /favorites
+API -> DB: guardar favorito
+DB --> API: OK
+API --> User: favorito guardado
+
+== Listar Favoritos ==
+
+User -> API: GET /favorites
+API -> DB: obtener favoritos
+DB --> API: lista
+API --> User: favoritos
+
+@enduml
